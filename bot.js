@@ -22,9 +22,11 @@ client.on('message_create', message => {
         client.sendMessage(message.from, '1 - Brigadeiros');
         client.sendMessage(message.from, '2 - Salgados');
         // client.sendMessage(message.from, ''); Fazer ainda algo engraçado
-
 	}
   
+    if (message.body.toLocaleLowerCase ===  "1") {
+        client.sendMessage(message.from, 'Digite a opção desejada:');
+    }
    
 });
 
