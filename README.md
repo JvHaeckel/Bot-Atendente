@@ -9,7 +9,7 @@ npm install whatsapp-web.js
 npm install qrcode-terminal                   Gerar QR Code
 
 
-<br><br>
+<br>
 Depois copiar e colar esse código: 
 
 const { Client } = require('whatsapp-web.js');
@@ -22,5 +22,9 @@ client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
 client.initialize();
+
+
+<br>
+
 
 
