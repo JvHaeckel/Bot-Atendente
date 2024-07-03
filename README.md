@@ -25,6 +25,13 @@ client.initialize();
 
 
 <br>
+Depois copiar e colar esse código: Replying to messages
+client.on('message_create', message => {
+	if (message.body === '!ping') {
+		// send back "pong" to the chat the message was sent in
+		client.sendMessage(message.from, 'pong');
+	}
+});
 
 
 
