@@ -1,7 +1,3 @@
-
-
-
-
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
@@ -15,14 +11,22 @@ client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
 
-client.initialize();
+
 
 // Respondendo
 client.on('message_create', message => {
-	if (message.body === '!ping') {
-		// send back "pong" to the chat the message was sent in
-		client.sendMessage(message.from, 'pong');
+	if (message.body.toLocaleLowerCase === 'oi' || 'e ai' || 'boa noite' || 'boa tarde' || 'ola' || 'ei'   || 'tu' ) {
+		
+		client.sendMessage(message.from, 'Oi, sou o Brigs seu assistente, Bem vindo');
+        client.sendMessage(message.from, 'Digite a opção desejada:');
+        client.sendMessage(message.from, '1 - Brigadeiros');
+        client.sendMessage(message.from, '2 - Salgados');
+        // client.sendMessage(message.from, ''); Fazer ainda algo engraçado
+
 	}
+  
+   
 });
 
 
+client.initialize();
